@@ -6,5 +6,6 @@ docker run -d -p 8001:80 --name haproxy-simple-nginx-2 -v $(pwd)/www/2:/usr/shar
 echo "Done."
 
 echo "Starting HAProxy"
-docker run -d -p 8080:8080 --name haproxy-simple-haproxy haproxy-simple 
+docker run -d -p 8080:8080 --name haproxy-simple-haproxy -v $(pwd)/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg haproxy
+
 echo "Done."
