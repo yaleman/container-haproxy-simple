@@ -1,8 +1,5 @@
 #!/bin/bash
-echo "Targeting the following nodes:"
-docker ps -f name=haproxy-simple-
 
-echo ""
-echo "Stopping now..."
-docker ps -qa -f name=haproxy-simple- | xargs docker rm -f
-echo "Done."
+eval $(docker-machine env)
+docker-compose stop
+docker-compose rm -f
